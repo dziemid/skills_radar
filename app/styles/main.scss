@@ -3,6 +3,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 // endbower
 
+.navbar-fixed-top {
+  background-color: #ffffff;
+}
+
+.body-content {
+  margin-top: 60px;
+}
+
 .github-forkme {
   img {
     position: absolute;
