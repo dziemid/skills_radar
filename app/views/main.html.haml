@@ -30,7 +30,7 @@
   %h2 Last used at work
 .row
   .col-xs-12.col-sm-4
-    .skill{ "ng-repeat" => "skill in skills | filter:searchText | orderBy: '-lastUsedAtWork'" }
+    .skill{ "ng-repeat" => "skill in skills |   filter:searchText | orderBy: '-lastUsedAtWork'" }
       {{skill.name}}
 .row
   %h2 Last deliberate practice
