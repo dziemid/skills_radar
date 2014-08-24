@@ -1,29 +1,29 @@
 .row
-  Search:
-  %input{ "ng-model"=>"searchText" }
+  .col-xs-12
+    %input{ "placeholder" => "Skill or Type or Level", "ng-model"=>"searchText" }
 .row
   %h2 Skill types
 .row
   .col-xs-12.col-sm-4{ "ng-repeat" => "a_type in types" }
-    .panel.panel-default
+    .panel.panel-default{ "ng-show" => "filteredItems.length"  }
       .panel-heading.text-center
         {{a_type}}
       .panel-body
         .text-center
-          .skill{ "ng-repeat" => "skill in skills | filter: { type: a_type } | filter:searchText | orderBy: '-lastUsedAtWork'" }
-            {{skill.name}}
+          .skill{ "ng-repeat" => "item in filteredItems  = ( skills | filter: { type: a_type } | filter:searchText | orderBy: '-lastUsedAtWork')" }
+            {{item.name}}
 
 .row
   %h2 Skill level
 .row
   .col-xs-12.col-sm-4{ "ng-repeat" => "a_level in levels" }
-    .panel.panel-default
+    .panel.panel-default{ "ng-show" => "filteredItems.length"  }
       .panel-heading.text-center
         {{a_level}}
       .panel-body
         .text-center
-          .skill{ "ng-repeat" => "skill in skills | filter: { level: a_level } | filter:searchText | orderBy: '-lastUsedAtWork'" }
-            {{skill.name}}
+          .skill{ "ng-repeat" => "item in filteredItems  = (skills | filter: { level: a_level } | filter:searchText | orderBy: '-lastUsedAtWork')" }
+            {{item.name}}
 
 
 .row
