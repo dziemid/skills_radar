@@ -1,8 +1,10 @@
 .row
-  .col-xs-12.col-sm-6
-    .panel.panel-default{"ng-class"=>"status_background_class"}
+  .col-xs-12.col-sm-4{ "ng-repeat" => "a_type in types" }
+    .panel.panel-default
       .panel-heading.text-center
-        Device Checker
+        {{a_type}}
       .panel-body
         .text-center
-          Test
+          .skill{ "ng-repeat" => "skill in skills | filter: { type: a_type }" }
+            {{skill.name}}
+  
